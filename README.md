@@ -8,6 +8,12 @@
 - Javier Eduardo España Pachecho #23361 
 - Roberto José Barreda Siekavizza #23354  
 
+
+## **Enlace del repositorio**  
+```bash
+   https://github.com/Javier-Espana/DB_LAB3.git
+   ```  
+
 ## **Cómo ejecutar el proyecto**  
 
 ### **Requisitos previos**  
