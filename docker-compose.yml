@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: lab3_db
+    environment:
+      POSTGRES_USER: lab3_user
+      POSTGRES_PASSWORD: lab3_password
+      POSTGRES_DB: lab3_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init_db:/docker-entrypoint-initdb.d  # Ejecuta scripts SQL al iniciar
+    ports:
+      - "5432:5432"
+
+  app:
+    build: ./src
+    container_name: lab3_app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://lab3_user:lab3_password@db:5432/lab3_db"
+    volumes:
+      - ./src:/app
+    ports:
+      - "8501:8501"
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres_data:
