@@ -1,6 +1,13 @@
 version: '3.8'
 
 services:
+  initdb:
+    build: ./src
+    command: /bin/sh -c "python schema.py && python data_generator.py"
+    volumes:
+      - ./src:/app
+      - ./init_db:/init_db
+
   db:
     image: postgres:13
     container_name: lab3_db
@@ -10,9 +17,11 @@ services:
       POSTGRES_DB: lab3_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init_db:/docker-entrypoint-initdb.d  # Ejecuta scripts SQL al iniciar
+      - ./init_db:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
+    depends_on:
+      - initdb
 
   app:
     build: ./src

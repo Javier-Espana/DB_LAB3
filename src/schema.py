@@ -12,15 +12,11 @@ Base = declarative_base()
 
 class TipoCarnet(String):
     def __init__(self):
-        super().__init__(10)
+        super().__init__(11)
     
     @property
     def python_type(self):
         return str
-
-class TipoEstadoInscripcion(ENUM):
-    def __init__(self):
-        super().__init__('activo', 'inactivo', name='estado_inscripcion')
 
 class Estudiante(Base):
     __tablename__ = 'estudiantes'
@@ -49,7 +45,7 @@ class Inscripcion(Base):
     estudiante_id = Column(Integer, ForeignKey('estudiantes.id', ondelete='CASCADE'), nullable=False)
     curso_id = Column(Integer, ForeignKey('cursos.id', ondelete='CASCADE'), nullable=False)
     fecha_inscripcion = Column(DateTime, server_default=func.now())
-    estado = Column(TipoEstadoInscripcion(), nullable=False)
+    estado = Column(ENUM('activo', 'inactivo', name='estado_inscripcion'), nullable=False)
 
 def generar_schema(url_bd='postgresql://usuario:contraseña@localhost/basedatos'):
     """Genera el archivo schema.sql con todo el DDL necesario"""
@@ -59,13 +55,19 @@ def generar_schema(url_bd='postgresql://usuario:contraseña@localhost/basedatos'
     
     sentencias_ddl = []
     
+    # Eliminar el tipo si ya existe antes de crearlo, para evitar conflictos
     sentencias_ddl.append("""
     -- Tipos personalizados
+    DO $$ BEGIN
+        IF EXISTS (SELECT 1 FROM pg_type WHERE typname = 'estado_inscripcion') THEN
+            DROP TYPE estado_inscripcion CASCADE;
+        END IF;
+    END $$;
     CREATE TYPE estado_inscripcion AS ENUM ('activo', 'inactivo');
     """)
     
     for tabla in metadatos.sorted_tables:
-        sentencias_ddl.append(str(CreateTable(tabla).compile(motor)))
+        sentencias_ddl.append(str(CreateTable(tabla).compile(motor)) + ";")
     
     sentencias_ddl.append("""
     -- Restricción para formato de carnet (A-XXXX-YYYY)
@@ -96,9 +98,12 @@ def generar_schema(url_bd='postgresql://usuario:contraseña@localhost/basedatos'
     JOIN cursos c ON i.curso_id = c.id;
     """)
     
-    with open('schema.sql', 'w', encoding='utf-8') as archivo:
+    with open('/init_db/01_schema.sql', 'w', encoding='utf-8') as archivo:
         archivo.write("-- Script DDL generado automáticamente el {}\n\n".format(datetime.now()))
         archivo.write("\n\n".join(sentencias_ddl))
     
     print("¡Archivo schema.sql generado con éxito!")
+
+if __name__ == "__main__":
+    generar_schema()
 

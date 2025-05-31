@@ -70,13 +70,21 @@ def generar_data_sql():
             contenido += ");\n\n"
 
     #escribir el archivo
-    with open('data.sql', 'w', encoding='utf-8') as f:
+    with open('/init_db/02_data.sql', 'w', encoding='utf-8') as f:
         f.write(contenido)
+        # Agregar corrección de secuencias al final
+        f.write("""
+-- Corrección de secuencias para evitar conflictos de clave primaria
+SELECT setval('estudiantes_id_seq', (SELECT MAX(id) FROM estudiantes));
+SELECT setval('cursos_id_seq', (SELECT MAX(id) FROM cursos));
+SELECT setval('inscripciones_id_seq', COALESCE((SELECT MAX(id) FROM inscripciones), 1));
+""")
     
     print("Archivo data.sql generado con éxito!")
     print(f"- {len(estudiantes)} estudiantes")
     print(f"- {len(cursos)} cursos")
     print("- 30 inscripciones (relaciones múltiples)")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     generar_data_sql()
+

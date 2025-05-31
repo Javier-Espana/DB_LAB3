@@ -25,19 +25,19 @@ def validar_formato_carnet(carnet: str) -> bool:
 # ----------------------------
 
 class Estudiante(Base):
-    _tablename_ = 'estudiantes'
+    __tablename__ = 'estudiantes'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     nombre = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False, unique=True)
     fecha_nacimiento = Column(Date, nullable=False)
-    carnet = Column(String(10), nullable=False, unique=True)  # Validación se hará a nivel de aplicación/BD
+    carnet = Column(String(11), nullable=False, unique=True)  # Validación se hará a nivel de aplicación/BD
     
     # Relación con cursos a través de inscripciones
     inscripciones = relationship("Inscripcion", back_populates="estudiante", cascade="all, delete-orphan")
 
 class Curso(Base):
-    _tablename_ = 'cursos'
+    __tablename__ = 'cursos'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     nombre = Column(String(100), nullable=False)
@@ -49,12 +49,12 @@ class Curso(Base):
     inscripciones = relationship("Inscripcion", back_populates="curso")
 
 class Inscripcion(Base):
-    _tablename_ = 'inscripciones'
+    __tablename__ = 'inscripciones'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     estudiante_id = Column(Integer, ForeignKey('estudiantes.id', ondelete="CASCADE"), nullable=False)
     curso_id = Column(Integer, ForeignKey('cursos.id', ondelete="CASCADE"), nullable=False)
-    estado = Column(Enum(EstadoInscripcion), nullable=False)
+    estado = Column(Enum(EstadoInscripcion, name="estado_inscripcion"), nullable=False)
     fecha_inscripcion = Column(Date, server_default="CURRENT_DATE")
     
     # Relaciones
