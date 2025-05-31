@@ -5,8 +5,8 @@
 **Ciclo 1, 2025**  
 
 ## **Autores**  
-- [Javier Eduardo España Pachecho #23361]  
-- [Roberto José Barreda Siekavizza #23354]  
+- Javier Eduardo España Pachecho #23361 
+- Roberto José Barreda Siekavizza #23354  
 
 ## **Cómo ejecutar el proyecto**  
 
