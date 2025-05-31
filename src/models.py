@@ -11,8 +11,8 @@ Base = declarative_base()
 
 # Tipo 1: Estado de inscripción (ENUM)
 class EstadoInscripcion(PyEnum):
-    ACTIVO = "activo"
-    INACTIVO = "inactivo"
+    activo = "activo"
+    inactivo = "inactivo"
 
 # Tipo 2: Validación de formato de carnet (A-XXXX-YYYY)
 def validar_formato_carnet(carnet: str) -> bool:

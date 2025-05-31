@@ -1,4 +1,4 @@
--- Script DDL generado automáticamente el 2025-05-31 06:37:41.186448
+-- Script DDL generado automáticamente el 2025-05-31 17:18:52.691236
 
 
     -- Tipos personalizados

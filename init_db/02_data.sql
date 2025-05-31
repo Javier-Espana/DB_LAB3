@@ -1,5 +1,5 @@
 -- Script de inserción de datos generado automáticamente
--- Fecha: 2025-05-31 06:37:41
+-- Fecha: 2025-05-31 17:18:53
 -- Total: 30 registros significativos con relaciones múltiples
 
 INSERT INTO estudiantes (id, nombre, email, fecha_nacimiento, carnet) VALUES (
@@ -125,189 +125,189 @@ INSERT INTO cursos (id, nombre, codigo, horario, aula) VALUES (
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   1,
   4,
-  '2024-12-13 21:24:49.040026',
+  '2024-12-14 08:06:01.040026',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   1,
   3,
-  '2025-02-27 21:00:42.642664',
+  '2025-02-28 07:41:54.642664',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   2,
   3,
-  '2024-11-03 12:24:58.181405',
+  '2024-11-03 23:06:10.181405',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   2,
   1,
-  '2024-12-30 03:58:39.459818',
+  '2024-12-30 14:39:51.459818',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   3,
   3,
-  '2024-10-10 06:02:31.207209',
+  '2024-10-10 16:43:43.207209',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   3,
   5,
-  '2025-05-30 07:11:11.281999',
+  '2025-05-30 17:52:23.281999',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   4,
   4,
-  '2024-07-20 13:27:03.353940',
+  '2024-07-21 00:08:15.353940',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   4,
   1,
-  '2024-11-27 06:54:33.913432',
+  '2024-11-27 17:35:45.913432',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   4,
   2,
-  '2025-03-03 01:52:23.018803',
+  '2025-03-03 12:33:35.018803',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   4,
   5,
-  '2025-04-10 13:05:22.189183',
+  '2025-04-10 23:46:34.189183',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   5,
   2,
-  '2024-07-25 20:38:18.164565',
+  '2024-07-26 07:19:30.164565',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   5,
   3,
-  '2024-07-28 11:13:54.793107',
+  '2024-07-28 21:55:06.793107',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   6,
   4,
-  '2025-02-03 13:48:11.007263',
+  '2025-02-04 00:29:23.007263',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   6,
   3,
-  '2025-01-03 20:50:47.330825',
+  '2025-01-04 07:31:59.330825',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   7,
   3,
-  '2024-10-18 13:38:45.475942',
+  '2024-10-19 00:19:57.475942',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   7,
   5,
-  '2025-01-03 16:16:58.819247',
+  '2025-01-04 02:58:10.819247',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   8,
   1,
-  '2024-11-17 23:40:51.743651',
+  '2024-11-18 10:22:03.743651',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   8,
   2,
-  '2024-08-30 20:42:14.010938',
+  '2024-08-31 07:23:26.010938',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   8,
   3,
-  '2024-12-19 02:18:48.555229',
+  '2024-12-19 13:00:00.555229',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   8,
   5,
-  '2025-05-10 05:59:26.890815',
+  '2025-05-10 16:40:38.890815',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   9,
   5,
-  '2025-02-03 12:04:08.982645',
+  '2025-02-03 22:45:20.982645',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   9,
   2,
-  '2024-07-11 21:00:04.111676',
+  '2024-07-12 07:41:16.111676',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   9,
   3,
-  '2025-04-19 04:42:40.536573',
+  '2025-04-19 15:23:52.536573',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   9,
   4,
-  '2025-03-01 06:52:57.489973',
+  '2025-03-01 17:34:09.489973',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   10,
   3,
-  '2025-03-07 18:13:12.296406',
+  '2025-03-08 04:54:24.296406',
   'inactivo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   10,
   1,
-  '2024-10-02 06:45:52.596116',
+  '2024-10-02 17:27:04.596116',
   'activo'
 );
 
 INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion, estado) VALUES (
   10,
   4,
-  '2024-09-15 05:37:11.075693',
+  '2024-09-15 16:18:23.075693',
   'inactivo'
 );
 
